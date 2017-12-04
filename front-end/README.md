@@ -8,9 +8,9 @@ Angular.JS 1.5
 Crie uma aplicação Angular.JS 1.5 para o front-end; <br> A aplicação constitui
 em uma agenda telefônica online. Então você deverá:
 
-1. Crie uma aplicação `React.js` com `Webpack` seguindo as boas práticas da
-	comunidade;
-2. Siga o modelo do wireframe em **docs/wireframe.png**;
+1. Crie uma aplicação `Angular.JS 1.5` seguindo as boas práticas da comunidade;
+2. Siga o modelo do wireframe em
+	[docs/wireframe.png](https://github.com/alboompro/recruiting-clicster/blob/master/docs/wireframe.png);
 3. Recupere os dados utilizando requisições ajax. Crie um arquivo json;
 
 * Faça todos os recursos propostos no wireframe. Mas sinta-se à vontade para
@@ -35,6 +35,7 @@ em uma agenda telefônica online. Então você deverá:
 ### Ganhe pontos extras por:
 
 * Testes automatizados;
+* Integre o teste de back-end com o teste de front-end;
 * Desenvolver HTML semântico;
 * Componentizar seu CSS;
 * Ser fiel as especificações dos arquivos;

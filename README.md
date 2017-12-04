@@ -1,13 +1,12 @@
 # Full-stack Clicster Teste
 
-O teste é dividido em 3 partes onde é obrigatório a entrega somente de um deles,
-a sua escolha! Porém você pode fazer todos se desejar.
+O teste é dividido em 3 partes onde é opcional a entrega da etapa 1 (infra).
 
 ## Testes
 
-* Infra
-* Back-end
-* Front-end
+1. Infra
+2. Front-end
+3. Back-end
 
 <sub>qualquer dúvida entre em contato através do e-mail
 `vagas@alboom.com.br`</sub>
