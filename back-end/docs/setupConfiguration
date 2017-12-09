@@ -1,0 +1,38 @@
+You should install the following tools: php 7.*, nginx and mysql
+0. First of all
+  0.1 sudo apt-get update
+
+1. Installing php 7.*
+  1.1 sudo apt-get install php-fpm php-mysql
+  1.2 For security, you should disable the cgi.fix_pathinfo option at php.ini file. Example:
+    1.2.1 sudo vi /etc/php7.0/fpm/php.ini
+      1.2.1.1 cgi.fix_pathinfo=0
+  1.3 Restart the php processor
+    1.3.1 sudo systemctl restart php7.0-fpm
+
+2. Installing Mysql
+  2.1 sudo apt-get install mysql-server
+
+3. Installing nginx
+  3.1 sudo apt-get install nginx
+  3.2 Configure the default file
+    3.2.1 sudo vi /etc/nginx/sites-available/default
+      3.2.1.1 change / uncomment the following parts:
+        root path_to_public;
+
+        index index.php index.html index.htm index.nginx-debian.html;
+
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        }
+
+        location ~ /\.ht {
+            deny all;
+        }
+    3.2.2 Test your modifications
+      3.2.2.1 sudo nginx -t
+    3.2.3 Restart the service
+      3.2.3.1 sudo systemctl reload nginx
+    3.2.4 Test at browser
+      3.2.4.1 http://localhost:80
