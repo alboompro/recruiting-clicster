@@ -7,7 +7,6 @@
   font-family: cursive;
   background-color: #4f4f4f;
   height: 10%;
-
 }
 
 .header-title {
@@ -173,6 +172,7 @@
 }
 
 .client-contact {
+  display: flex;
   height: 70%;
   border-right: 2px solid #929191;
   border-bottom: 2px solid #929191;
@@ -205,10 +205,20 @@
   height: 100%;
   border-right: 2px solid #929191;
 }
+
 .client-contact-information {
   display: flex;
   width: 70%;
   justify-content: space-around;
+}
+
+.client-contact .client-map {
+  display: flex;
+  width: 50%;
+}
+
+.client-map .map {
+  width: 100%;
 }
 
 .footer {
@@ -219,7 +229,6 @@
   font-family: cursive;
   background-color: #4f4f4f;
   height: 5%;
-
 }
 
 .footer-title {
