@@ -119,14 +119,14 @@
 
 }
 
-.client-card .client-information {
+.client-card .client-card-information {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
 }
 
 .client-card .client-name {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .client-card .client-company {
@@ -162,6 +162,10 @@
   display: flex;
   flex-direction: column;
   align-self: center;
+}
+
+.client-information > .client-name {
+  font-size: 1.8em;
 }
 
 .client-actions {
