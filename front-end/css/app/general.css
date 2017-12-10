@@ -48,7 +48,8 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .nav {
-  width: 30%;
+  width: 25%;
+  height: 85%;
 }
 
 .search-client {
@@ -134,4 +135,19 @@
 .client-card .client-company {
   /*flex-flow: column;*/
   font-size: 0.85em;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-weight: bold;
+  font-family: cursive;
+  background-color: #4f4f4f;
+  height: 5%;
+
+}
+
+.footer-title {
+  color: #fff;
 }
