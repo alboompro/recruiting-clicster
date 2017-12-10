@@ -22,17 +22,7 @@
 				</div>
 			</div>
 
-			<div ng-controller="ClientsController">
-				<div ng-repeat="client in clients">
-					<div class="client-card">
-						<img src="../source/client.png" alt="client" class="client-picture">
-					  <div class="client-information">
-							<p class="client-name">Nome: {{client.name}}</p>
-							<p class="client-company">Empresa: {{client.company}}</p>
-					  </div>
-					</div>
-				</div>
-			</div>
+<client-list ng-controller="ClientsController" ng-repeat="client in clients" client="client"></client-list>
 
 		</div>
 	</nav>
