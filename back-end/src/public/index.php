@@ -1,17 +1,11 @@
 <?php
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
 
-require '../vendor/autoload.php';
-require '../config/config.php';
+ini_set('display_errors', 'On');
 
+error_reporting( E_ALL );
 
-$app = new \Slim\App(['settings' => $config]);
-$app->get('/teste', function (Request $request, Response $response) {
+mb_internal_encoding("UTF-8");
 
-    $response->getBody()->write("Hello alboom!");
+$currentDirectory = __DIR__.'/..';
 
-    return $response->withHeader('Access-Control-Allow-Origin', '*');
-});
-
-$app->run();
+require $currentDirectory.'/app/start.php';
