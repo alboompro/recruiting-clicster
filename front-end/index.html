@@ -5,21 +5,27 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Agenda</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/app/reset.css">
+		<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/app/general.css">
 		<script src="js/lib/angular.min.js"></script>
     <script src="js/lib/angular-animate.min.js"></script>
     <script src="js/lib/angular-route.min.js"></script>
     <script src="js/lib/angular-resource.min.js"></script>
 		<script src="js/main.js"></script>
-		<script src="js/controllers/agenda-controller.js"></script>
+		<script src="js/controllers/agenda-controller.js"></script>		
 
 	</head>
-	<body>
-		<div class="container">
+	<body class="general-style">
+		<main>
+			<div class="container">
 
-			<ng-view></ng-view>
+				<ng-view></ng-view>
 
-		</div>
+			</div>
+		</main>
+
 	</body>
 </html>

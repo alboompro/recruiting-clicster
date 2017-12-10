@@ -1,0 +1,137 @@
+#search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+    display: inline-block;
+}
+
+#search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#search-input .glyphicon-search{
+    font-size: 23px;
+}
+
+.btn-circle {
+  width: 49px;
+  height: 49px;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 20px;
+  line-height: 2.00;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+#menu-add-button {
+  background-color: #d2cfcf;
+  color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.nav {
+  width: 30%;
+}
+
+.search-client {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 10px;
+  background-color: #fbfbfb;
+}
+
+.nav #search-input {
+  width: 80%;
+  margin: 5% 1% 5% 1%;
+}
+
+.nav #menu-add-button {
+  align-self: center;
+}
+
+.lateral-border {
+  width: 100%;
+  border-right: 2px solid #929191;
+  border-left: 2px solid #929191;
+  border-bottom: 2px solid #929191;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-weight: bold;
+  font-family: cursive;
+  background-color: #4f4f4f;
+  height: 10%;
+
+}
+
+.header-title {
+  color: #fff;
+}
+
+.general-style {
+  background-color: #f2f2f2;
+  font-family: cursive;
+}
+
+.client-card {
+  padding: 0;
+  margin: 0;
+  border-right: 2px solid #929191;
+  border-left: 2px solid #929191;
+  border-bottom: 2px solid #929191;
+  background-color: #fbfbfb;
+  display: flex;
+}
+
+.client-card:hover {
+  background-color: #e5e2e2;
+  transition: 0.3s;
+}
+.client-card .client-picture {
+  margin: 2%;
+  height: 50px;
+  border-radius: 300px;
+  border: 2px solid #4f4f4f;
+  align-self: center;
+
+}
+
+.client-card .client-information {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+
+  /*background-color: red;*/
+}
+
+.client-card .client-name {
+  /*background-color: red;*/
+  font-size: 1em;
+}
+
+.client-card .client-company {
+  /*flex-flow: column;*/
+  font-size: 0.85em;
+}
