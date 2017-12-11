@@ -1,19 +1,18 @@
 angular.module('agenda', ['directives', 'services','ngAnimate', 'ngRoute', 'ngResource'])
 	.config(function($routeProvider, $locationProvider) {
+    
+		$locationProvider.html5Mode(true);
 
-    // For some reason, this config isn't working
-		// $locationProvider.html5Mode(true);
-
-		$routeProvider.when('/#/clients', {
+		$routeProvider.when('/clients', {
 			templateUrl: 'partials/main.html',
 			controller: 'ClientsController'
 		});
 
-		$routeProvider.when('/#/new', {
+		$routeProvider.when('/new', {
 			templateUrl: 'partials/client.html',
 			controller: 'ClientController'
 		});
 
-		// $routeProvider.otherwise({redirectTo: '/#/clients'});
+		$routeProvider.otherwise({redirectTo: '/clients'});
 
 	});
