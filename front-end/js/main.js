@@ -5,10 +5,15 @@ angular.module('agenda', ['directives', 'services','ngAnimate', 'ngRoute', 'ngRe
 		// $locationProvider.html5Mode(true);
 
 		$routeProvider.when('/#/clients', {
-			templateUrl: 'partials/main.html',			
+			templateUrl: 'partials/main.html',
 			controller: 'ClientsController'
 		});
 
-		$routeProvider.otherwise({redirectTo: '#/clients'});
+		$routeProvider.when('/#/new', {
+			templateUrl: 'partials/client.html',
+			controller: 'ClientController'
+		});
+
+		// $routeProvider.otherwise({redirectTo: '/#/clients'});
 
 	});
