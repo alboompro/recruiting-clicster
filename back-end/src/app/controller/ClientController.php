@@ -12,7 +12,9 @@ class ClientController extends BaseController
     public function index($request, $response, $args)
     {
         $clientModel = new ClientModel($this->db);
-        return $response->withJson($clientModel->get());
+        return $response
+          ->withHeader('Access-Control-Allow-Origin', '*')
+          ->withJson($clientModel->get());
     }
 
 }
