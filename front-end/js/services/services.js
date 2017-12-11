@@ -1,6 +1,7 @@
+const backendUri = 'http://localhost:90/'
 angular.module('services', ['ngResource'])
 	.factory('clientResource', function($resource) {
-		return $resource('/v1/client/:clientId', null, {
+		return $resource(backendUri+'client/:clientId', null, {
 			'update' : {
 				method: 'PUT'
 			}
