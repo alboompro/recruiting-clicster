@@ -1,4 +1,3 @@
 <?php
 
-// $app->post('/authorize[/]', 'APIController:authorize');
-$app->get('/', 'ClientController:index');
+$app->get('/client', 'ClientController:index');
