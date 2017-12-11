@@ -15,16 +15,9 @@
 						</span>
 					</div>
 				</div>
-				<div class="">
-					<span class="input-group-btn">
-						<a href="/new" class="btn btn-circle" type="button">
-							<i class="glyphicon glyphicon-plus"/></i>
-						</a>
-					</span>
-					<!-- <button id="menu-add-button" class="btn btn-circle" type="button">
-						<i class="glyphicon glyphicon-plus"/></i>
-					</button> -->
-				</div>
+				<a href="/new" id="menu-add-button" class="btn btn-circle" type="button">
+					<i class="glyphicon glyphicon-plus"/></i>
+				</a>
 			</div>
 
 			<client-list ng-controller="ClientsController" ng-repeat="client in clients" client="client"></client-list>

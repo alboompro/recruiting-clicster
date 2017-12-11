@@ -36,6 +36,10 @@
 
 .nav #menu-add-button {
   align-self: center;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .lateral-border {
