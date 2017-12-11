@@ -20,13 +20,14 @@
 }
 
 .general-style {
-  background-color: #f2f2f2;
+  background-color: #fbfbfb;
   font-family: cursive;
 }
 
 .nav {
   width: 25%;
-  height: 85%;
+  height: 100vh;
+  border-right: 2px solid #929191;
 }
 
 .nav #search-input {
@@ -42,10 +43,8 @@
   justify-content: center;
 }
 
-.lateral-border {
+.bottom-border {
   width: 100%;
-  border-right: 2px solid #929191;
-  border-left: 2px solid #929191;
   border-bottom: 2px solid #929191;
 }
 
@@ -103,8 +102,6 @@
 .client-card {
   padding: 0;
   margin: 0;
-  border-right: 2px solid #929191;
-  border-left: 2px solid #929191;
   border-bottom: 2px solid #929191;
   background-color: #fbfbfb;
   display: flex;
@@ -183,7 +180,6 @@
   display: flex;
   height: 70%;
   border-right: 2px solid #929191;
-  border-bottom: 2px solid #929191;
 }
 
 .client-contact .client-contact-group {
@@ -237,6 +233,7 @@
   font-family: cursive;
   background-color: #4f4f4f;
   height: 5%;
+  border-top: 2px solid #929191;
 }
 
 .footer-title {
