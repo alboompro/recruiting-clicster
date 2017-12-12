@@ -13,4 +13,11 @@ class EmailModel extends BaseModel
         Parent::__construct($db);
     }
 
+    public function insertEmails($emails)
+    {
+        foreach ($emails as $email) {
+            $this->insert($email);
+        }
+    }
+
 }

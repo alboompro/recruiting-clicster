@@ -13,4 +13,10 @@ class TelephoneModel extends BaseModel
         Parent::__construct($db);
     }
 
+    public function insertTelephones($telephones)
+    {
+        foreach ($telephones as $telephone) {
+            $this->insert($telephone);
+        }
+    }
 }
