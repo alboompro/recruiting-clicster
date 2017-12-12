@@ -40,3 +40,27 @@ angular.module('directives', [])
 
 		return ddo;
 	})
+	.directive('clientPanel', function() {
+		var ddo = {};
+
+		ddo.restrict = "E";
+
+		ddo.templateUrl = 'js/directives/client-panel.html';
+
+		return ddo;
+	})
+	.directive('clientPhoto', function() {
+
+		var ddo = {};
+
+		ddo.restrict = "AE";
+
+		ddo.scope = {
+				name: '@',
+				url: '@'
+		};
+
+		ddo.template = '<img class="img-responsive center-block" src="{{url}}" alt="{{name}}"/>';
+
+		return ddo;
+})
