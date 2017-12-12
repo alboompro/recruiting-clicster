@@ -1,3 +1,4 @@
+// Controller responsible to manage clients
 angular.module('agenda').controller('ClientsController', [ '$scope', '$http', 'clientResource', 'getClient', function($scope, $http, clientResource, getClient) {
 
 	$scope.clients = [];

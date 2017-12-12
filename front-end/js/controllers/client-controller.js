@@ -1,3 +1,4 @@
+// Controller responsible to manage client
 angular.module('agenda')
 	.controller('ClientController', ['$scope', 'clientResource', '$routeParams', 'clientInsertion', function($scope, clientResource, $routeParams, clientInsertion) {
 

@@ -1,5 +1,8 @@
 <?php
 
+// The base model will be responsible for manage all others models.
+// This base will provide an easy communication with query builder
+
 use Illuminate\Database\Eloquent;
 
 abstract class BaseModel
@@ -24,6 +27,8 @@ abstract class BaseModel
         return $this->db;
     }
 
+    // Preparing fields according with the fillable property.
+    // With this method, won't be necessary map request attributes
     public function prepareFields($attributes)
     {
         $preparedFields = [];

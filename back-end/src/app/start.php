@@ -1,5 +1,6 @@
 <?php
-
+// This file will provide the project configuration, like, file registering,
+// database connection (in this case Eloquent + Mysql).
 require '../vendor/autoload.php';
 
 spl_autoload_register(function ($classname) {

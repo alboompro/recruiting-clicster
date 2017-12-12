@@ -1,4 +1,6 @@
 <?php
+// All system routes
+
 // CLIENT ROUTES
 $app->get('/client/{cli_id}', 'ClientController:show');
 $app->get('/client', 'ClientController:index');

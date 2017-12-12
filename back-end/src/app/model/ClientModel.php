@@ -1,5 +1,7 @@
 <?php
 
+// This is the main model, for that, it must do db operations under transactions
+// for data integrity.
 use Interop\Container\ContainerInterface;
 
 class ClientModel extends BaseModel
