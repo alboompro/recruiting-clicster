@@ -53,4 +53,9 @@ abstract class BaseModel
 
         return $this->query()->where($this->primaryKey, '=', $id)->update($preparedFields);
     }
+
+    public function delete($id)
+    {
+        return $this->query()->where($this->primaryKey, '=', $id)->delete();
+    }
 }

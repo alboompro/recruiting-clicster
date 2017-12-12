@@ -39,10 +39,19 @@ class ClientController extends BaseController
     public function update($request, $response, $args)
     {
         $clientModel = new ClientModel($this->db);
-        
+
         $clientUpdateReturn = $clientModel->update($args['cli_id'], $request->getParsedBody());
 
         return $this->getPreparedResponse($response, $clientUpdateReturn);
+    }
+
+    public function delete($request, $response, $args)
+    {
+        $clientModel = new ClientModel($this->db);
+
+        $client = $clientModel->delete($args['cli_id']);
+
+        return $this->getPreparedResponse($response, $client);
     }
 
 }
