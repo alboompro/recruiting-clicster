@@ -2,7 +2,15 @@ angular.module('agenda')
 	.controller('ClientController', ['$scope', 'clientResource', '$routeParams', 'clientInsertion', function($scope, clientResource, $routeParams, clientInsertion) {
 
 		$scope.client = {};
+		$scope.clients = {};
+		$scope.clientFilter = '';
 		$scope.message = '';
+
+		clientResource.query(function(clients) {
+			$scope.clients = clients;
+		}, function(erro) {
+			console.log(erro);
+		});
 
 		if($routeParams.cli_id) {
 			clientResource.get({cli_id: $routeParams.cli_id}, function(client) {
@@ -13,9 +21,9 @@ angular.module('agenda')
 			});
 		}
 
-		$scope.submeter = function() {
-
-			if ($scope.formulario.$valid) {
+		$scope.submit = function() {
+			console.log('ESTOU NO INSERIR', $scope.clientForm.$valid, $scope.client);
+			if ($scope.clientForm.$valid) {
 				clientInsertion.insert($scope.client)
 				.then(function(dados) {
 					$scope.message = dados.message;
