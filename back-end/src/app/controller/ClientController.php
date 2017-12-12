@@ -21,7 +21,7 @@ class ClientController extends BaseController
     public function show($request, $response, $args)
     {
         $clientModel = new ClientModel($this->db);
-    
+
         $client = $clientModel->find($args['cli_id']);
 
         return $this->getPreparedResponse($response, $client);
@@ -34,6 +34,19 @@ class ClientController extends BaseController
         $clientInsertionReturn = $clientModel->insert($request->getParsedBody());
 
         return $this->getPreparedResponse($response, $clientInsertionReturn);
+    }
+
+    public function update($request, $response, $args)
+    {
+        $clientModel = new ClientModel($this->db);
+
+        // var_dump($args['cli_id'], $request->getParsedBody());
+        // die();
+
+        // $clientUpdateReturn = $clientModel->find($args['cli_id'])->update($request->getParsedBody());
+        $clientUpdateReturn = $clientModel->update($args['cli_id'], $request->getParsedBody());
+
+        return $this->getPreparedResponse($response, $clientUpdateReturn);
     }
 
 }

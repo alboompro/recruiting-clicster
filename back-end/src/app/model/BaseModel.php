@@ -10,28 +10,32 @@ abstract class BaseModel
     protected $primaryKey;
 
     public function __construct($db)
-    {
-        // $db->setKeyName($this->primaryKey);
+    {        
         $this->db = $db->table($this->table);
     }
 
     public function query()
     {
-      return $this->db;
+        return $this->db;
     }
 
     public function get($filter=null)
     {
-      return $this->query()->get();
+        return $this->query()->get();
     }
 
     public function find($id)
-    {        
+    {
         return $this->query()->where($this->primaryKey, '=', $id)->get();
     }
 
     public function insert($attributes)
     {
-      return $this->query()->insert($attributes);
+        return $this->query()->insert($attributes);
+    }
+
+    public function update($id, $attributes)
+    {
+        return $this->query()->where($this->primaryKey, '=', $id)->update($attributes);
     }
 }
