@@ -38,7 +38,7 @@ abstract class BaseModel
 
     public function find($id)
     {
-        return $this->query()->where($this->primaryKey, '=', $id)->get();
+        return $this->query()->where($this->primaryKey, '=', $id)->get()[0];
     }
 
     public function insert($attributes)
