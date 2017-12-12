@@ -1,0 +1,22 @@
+<!-- Component responsible to filter the clients -->
+<div class="search-client bottom-border">
+  <div id="search-input">
+    <div class="input-group">
+      <form>
+        <input
+          ng-model="clientFilter"
+          type="text"
+          class="form-control input-lg"
+          placeholder="Buscar cliente" />
+      </form>
+      <span class="input-group-btn">
+        <button class="btn btn-info btn-lg" type="button">
+          <i class="glyphicon glyphicon-search"/></i>
+        </button>
+      </span>
+    </div>
+  </div>
+  <a href="/new" ng-controller="ClientsController" class="menu-add-button btn btn-circle" type="button">
+    <i class="glyphicon glyphicon-plus"/></i>
+  </a>
+</div>

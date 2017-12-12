@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="agenda">
+	<head>
+		<base href="/">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Agenda</title>
+		<link rel="stylesheet" href="css/app/reset.css">
+		<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/app/general.css">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/lib/angular-resource.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/controllers/agenda-controller.js"></script>
+		<script src="js/controllers/clients-controller.js"></script>
+		<script src="js/controllers/client-controller.js"></script>
+		<script src="js/directives/directives.js"></script>
+		<script src="js/services/services.js"></script>
+	</head>
+	<body class="general-style">
+		<main>
+			<ng-view></ng-view>
+		</main>
+	</body>
+</html>
