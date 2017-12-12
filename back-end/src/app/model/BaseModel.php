@@ -43,7 +43,8 @@ abstract class BaseModel
     public function insert($attributes)
     {
         $preparedFields = $this->prepareFields($attributes);
-        return $this->query()->insert($attributes);
+
+        return $this->query()->insertGetId($preparedFields);
     }
 
     public function update($id, $attributes)

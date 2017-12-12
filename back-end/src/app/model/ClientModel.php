@@ -13,4 +13,28 @@ class ClientModel extends BaseModel
         Parent::__construct($db);
     }
 
+    public function insert($attributes)
+    {
+
+      $db = $this->query()->getConnection();
+      $db->beginTransaction();
+
+      $telephoneModel = new TelephoneModel($db);
+      $emailModel = new EmailModel($db);
+
+      try {
+          $insertedId = Parent::insert($attributes);
+          $attributes['ema_id_clients'] = $insertedId;
+          $attributes['tel_id_clients'] = $insertedId;
+
+          $emailModel->insert($attributes);
+          $telephoneModel->insert($attributes);
+          $db->commit();
+      } catch (Exception $e) {
+          $db->rollBack();          
+          return $e;
+      }
+      return $insertedId;
+    }
+
 }
