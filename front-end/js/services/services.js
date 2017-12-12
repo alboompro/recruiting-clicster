@@ -7,9 +7,6 @@ angular.module('services', ['ngResource'])
 			},
 			'show' : {
 				method: 'GET'
-			},
-			'save': {
-				method: 'POST'
 			}
 		});
 	})
@@ -33,8 +30,7 @@ angular.module('services', ['ngResource'])
 							message: 'Não foi possível atualizar o cliente ' + client.name
 						});
 					});
-
-				} else {					
+				} else {
 					clientResource.save(client, function() {
 						$rootScope.$broadcast(event);
 						resolve({
