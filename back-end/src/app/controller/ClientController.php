@@ -18,6 +18,15 @@ class ClientController extends BaseController
         return $this->getPreparedResponse($response, $clientList);
     }
 
+    public function show($request, $response, $args)
+    {
+        $clientModel = new ClientModel($this->db);
+    
+        $client = $clientModel->find($args['cli_id']);
+
+        return $this->getPreparedResponse($response, $client);
+    }
+
     public function create($request, $response, $args)
     {
         $clientModel = new ClientModel($this->db);

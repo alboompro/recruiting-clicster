@@ -1,14 +1,17 @@
 <?php
 
-use Interop\Container\ContainerInterface;
+use Illuminate\Database\Eloquent;
+// require '../../vendor/illuminate/database/Eloquent/Model.php';
 
 abstract class BaseModel
 {
-    protected $table;
     protected $db;
+    protected $table;
+    protected $primaryKey;
 
     public function __construct($db)
     {
+        // $db->setKeyName($this->primaryKey);
         $this->db = $db->table($this->table);
     }
 
@@ -17,11 +20,18 @@ abstract class BaseModel
       return $this->db;
     }
 
-    public function get($filter=null) {
+    public function get($filter=null)
+    {
       return $this->query()->get();
     }
 
-    public function insert($attributes) {
+    public function find($id)
+    {        
+        return $this->query()->where($this->primaryKey, '=', $id)->get();
+    }
+
+    public function insert($attributes)
+    {
       return $this->query()->insert($attributes);
     }
 }
