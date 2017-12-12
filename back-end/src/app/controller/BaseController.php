@@ -16,4 +16,11 @@ abstract class BaseController
 
     }
 
+    public function getPreparedResponse($response, $data)
+    {
+      return $response
+        ->withHeader('Access-Control-Allow-Origin', '*')
+        ->withJson($data);
+    }
+
 }

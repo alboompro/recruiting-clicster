@@ -12,18 +12,19 @@ class ClientController extends BaseController
     public function index($request, $response, $args)
     {
         $clientModel = new ClientModel($this->db);
-        return $response
-          ->withHeader('Access-Control-Allow-Origin', '*')
-          ->withJson($clientModel->get());
+
+        $clientList = $clientModel->get();
+
+        return $this->getPreparedResponse($response, $clientList);
     }
 
     public function create($request, $response, $args)
-    {        
+    {
         $clientModel = new ClientModel($this->db);
-        return $response
-          ->withHeader('Access-Control-Allow-Origin', '*')
-          ->withJson($clientModel->insert($request->getParsedBody()));
 
+        $clientInsertionReturn = $clientModel->insert($request->getParsedBody());
+
+        return $this->getPreparedResponse($response, $clientInsertionReturn);
     }
 
 }
