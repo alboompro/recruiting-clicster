@@ -1,2 +1,87 @@
+<default-header></default-header>
 
-<p>Cadastro de clientes</p>
+<section class="content">
+	<nav class="nav">
+		<div>
+			<search-input></search-input>
+
+			<client-list
+				ng-controller="ClientsController"
+				ng-repeat="client in clients | filter: clientFilter"
+				client="client">
+			</client-list>
+		</div>
+	</nav>
+
+	<main class="main">
+		<div class="client-form col-md-10">
+			<h3 class="text-center">Cadastro de clientes</h3>
+			<p ng-show="message.length" class="alert alert-info">{{message}}</p>
+			<form novalidate name="clientForm" class="row" ng-submit="submit()">
+				<div class="col-md-8">
+					<div class="form-group">
+						<label>Nome</label>
+						<input name="name" class="form-control" ng-model="client.name" required>
+
+						<span ng-show = "clientForm.$submitted && clientForm.name.$error.required"
+							class="form-control alert-danger">
+							Nome é de preenchimento obrigatório.
+						</span>
+						<span ng-show="clientForm.$submitted && clientForm.name.$error.maxlength"
+							class="form-control alert-danger">
+							Nome deve ter no máximo 200 caracteres.
+						</span>
+					</div>
+					<div class="form-group">
+						<label>Empresa</label>
+						<input name="company" class="form-control" ng-model="client.company" required>
+
+						<span ng-show = "clientForm.$submitted && clientForm.company.$error.required"
+							class="form-control alert-danger">
+							Empresa é de preenchimento obrigatório.
+						</span>
+						<span ng-show="clientForm.$submitted && clientForm.name.$error.maxlength"
+							class="form-control alert-danger">
+							Empresa deve ter no máximo 100 caracteres.
+						</span>
+					</div>
+					<div class="form-group">
+						<label>Imagem (URL)</label>
+						<input name="url" class="form-control" ng-model="client.url" required>
+
+						<span ng-show = "clientForm.$submitted && clientForm.url.$error.required"
+							class="form-control alert-danger">
+							URL obrigatória
+						</span>
+					</div>
+					<div class="form-group">
+						<label>DDD</label>
+						<input name="ddd" class="form-control" ng-model="telephone.ddd" required>
+						<span ng-show="clientForm.$submitted && clientForm.ddd.$error.maxlength"
+							class="form-control alert-danger">
+							DDD deve ter no máximo 2 caracteres.
+						</span>
+					</div>
+					<div class="form-group">
+						<label>Telefone</label>
+						<input name="telephone" class="form-control" ng-model="telephone.number" required>
+						<span ng-show="clientForm.$submitted && clientForm.ddd.$error.maxlength"
+							class="form-control alert-danger">
+							Telefone deve ter no máximo 9 caracteres.
+						</span>
+					</div>
+
+					<button type="submit" class="btn btn-primary" ng-disabled="clientForm.$invalid">
+						Salvar
+					</button>
+					<a href="/" meu-focus class="btn btn-primary">Voltar</a>
+					<hr>
+				</div>
+				<div class="col-md-4">
+					<client-photo ng-show="client.url.length" name="{{client.name}}" url="{{client.url}}"></client-photo>
+				</div>
+			</form>
+		</div>
+	</main>
+</section>
+<default-footer></default-footer>
