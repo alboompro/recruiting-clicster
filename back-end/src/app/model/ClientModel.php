@@ -15,7 +15,6 @@ class ClientModel extends BaseModel
 
     public function insert($attributes)
     {
-
       $db = $this->query()->getConnection();
       $db->beginTransaction();
 
@@ -31,10 +30,31 @@ class ClientModel extends BaseModel
           $telephoneModel->insert($attributes);
           $db->commit();
       } catch (Exception $e) {
-          $db->rollBack();          
+          $db->rollBack();
           return $e;
       }
       return $insertedId;
+    }
+
+    public function update($cli_id, $attributes)
+    {
+      $db = $this->query()->getConnection();
+      $db->beginTransaction();
+
+      $telephoneModel = new TelephoneModel($db);
+      $emailModel = new EmailModel($db);
+
+      try {
+          Parent::update($cli_id, $attributes);
+
+          $emailModel->update($attributes[$emailModel->getPrimaryKey()], $attributes);
+          $telephoneModel->update($attributes[$telephoneModel->getPrimaryKey()], $attributes);
+          $db->commit();
+      } catch (Exception $e) {
+          $db->rollBack();
+          return $e;
+      }
+      return $cli_id;
     }
 
 }

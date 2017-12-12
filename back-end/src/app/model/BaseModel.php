@@ -14,6 +14,11 @@ abstract class BaseModel
         $this->db = $db->table($this->table);
     }
 
+    public function getPrimaryKey()
+    {
+        return $this->primaryKey;
+    }
+
     public function query()
     {
         return $this->db;
