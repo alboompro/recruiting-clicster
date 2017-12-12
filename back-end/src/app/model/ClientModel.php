@@ -4,7 +4,7 @@ use Interop\Container\ContainerInterface;
 
 class ClientModel extends BaseModel
 {
-    protected $fillable = ['cli_nome', 'cli_company'];
+    protected $fillable = ['cli_name', 'cli_company'];
     protected $primaryKey = 'cli_id';
 
     public function __construct($db)

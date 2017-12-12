@@ -8,15 +8,27 @@ abstract class BaseModel
     protected $db;
     protected $table;
     protected $primaryKey;
+    protected $fillable;
 
     public function __construct($db)
-    {        
+    {
         $this->db = $db->table($this->table);
     }
 
     public function query()
     {
         return $this->db;
+    }
+
+    public function prepareFields($attributes)
+    {
+        $preparedFields = [];
+        foreach ($this->fillable as $key => $value) {
+            if (array_key_exists($value, $attributes)) {
+                $preparedFields[$value] = $attributes[$value];
+            }
+        }
+        return $preparedFields;
     }
 
     public function get($filter=null)
@@ -31,11 +43,14 @@ abstract class BaseModel
 
     public function insert($attributes)
     {
+        $preparedFields = $this->prepareFields($attributes);
         return $this->query()->insert($attributes);
     }
 
     public function update($id, $attributes)
     {
-        return $this->query()->where($this->primaryKey, '=', $id)->update($attributes);
+        $preparedFields = $this->prepareFields($attributes);
+
+        return $this->query()->where($this->primaryKey, '=', $id)->update($preparedFields);
     }
 }
