@@ -20,4 +20,8 @@ abstract class BaseModel
     public function get($filter=null) {
       return $this->query()->get();
     }
+
+    public function insert($attributes) {
+      return $this->query()->insert($attributes);
+    }
 }

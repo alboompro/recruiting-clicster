@@ -17,4 +17,13 @@ class ClientController extends BaseController
           ->withJson($clientModel->get());
     }
 
+    public function create($request, $response, $args)
+    {        
+        $clientModel = new ClientModel($this->db);
+        return $response
+          ->withHeader('Access-Control-Allow-Origin', '*')
+          ->withJson($clientModel->insert($request->getParsedBody()));
+
+    }
+
 }
