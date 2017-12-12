@@ -1,4 +1,4 @@
-angular.module('agenda').controller('ClientsController', [ '$scope', '$http', 'clientResource', function($scope, $http, clientResource) {
+angular.module('agenda').controller('ClientsController', [ '$scope', '$http', 'clientResource', 'getClient', function($scope, $http, clientResource, getClient) {
 
 	$scope.clients = [];
 	$scope.clientFilter = '';
@@ -9,5 +9,15 @@ angular.module('agenda').controller('ClientsController', [ '$scope', '$http', 'c
 	}, function(erro) {
 		console.log(erro);
 	});
+
+	$scope.getCardClient = function(client) {
+		getClient.get(client)
+		.then(function(client) {
+			$scope.client = client;
+		})
+		.catch(function(erro) {
+			$scope.message = erro.message;
+		});
+	};
 
 }]);

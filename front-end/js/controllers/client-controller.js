@@ -22,7 +22,6 @@ angular.module('agenda')
 		}
 
 		$scope.submit = function() {
-			console.log('ESTOU NO INSERIR', $scope.clientForm.$valid, $scope.client);
 			if ($scope.clientForm.$valid) {
 				clientInsertion.insert($scope.client)
 				.then(function(dados) {
