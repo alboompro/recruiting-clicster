@@ -34,8 +34,7 @@ angular.module('services', ['ngResource'])
 						});
 					});
 
-				} else {
-					console.log('TO NO CLIENT RESOURCE INSERT: ', client);
+				} else {					
 					clientResource.save(client, function() {
 						$rootScope.$broadcast(event);
 						resolve({
