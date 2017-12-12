@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Eloquent;
-// require '../../vendor/illuminate/database/Eloquent/Model.php';
 
 abstract class BaseModel
 {
