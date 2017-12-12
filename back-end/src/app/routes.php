@@ -6,6 +6,13 @@ $app->post('/client', 'ClientController:create');
 $app->put('/client/{cli_id}', 'ClientController:update');
 $app->delete('/client/{cli_id}', 'ClientController:delete');
 
+// COMPANY ROUTES
+$app->get('/company/{com_id}', 'CompanyController:show');
+$app->get('/company', 'CompanyController:index');
+$app->post('/company', 'CompanyController:create');
+$app->put('/company/{com_id}', 'CompanyController:update');
+$app->delete('/company/{com_id}', 'CompanyController:delete');
+
 // EMAIL ROUTES
 $app->get('/email/{ema_id}', 'EmailController:show');
 $app->get('/email', 'EmailController:index');
