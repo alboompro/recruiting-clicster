@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit347069f5a239a86ec966ceef44d3aa8e
 {
     public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b60a15de2898b9b18617f0446199707c' => __DIR__ . '/../..' . '/helpers/helpers.php',
@@ -27,7 +28,12 @@ class ComposerStaticInit347069f5a239a86ec966ceef44d3aa8e
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Yaml\\' => 23,
+            'Symfony\\Component\\Filesystem\\' => 29,
+            'Symfony\\Component\\Debug\\' => 24,
+            'Symfony\\Component\\Console\\' => 26,
+            'Symfony\\Component\\Config\\' => 25,
             'Slim\\Views\\' => 11,
             'Slim\\' => 5,
         ),
@@ -36,6 +42,7 @@ class ComposerStaticInit347069f5a239a86ec966ceef44d3aa8e
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+            'Phinx\\' => 6,
         ),
         'M' => 
         array (
@@ -71,9 +78,29 @@ class ComposerStaticInit347069f5a239a86ec966ceef44d3aa8e
         array (
             0 => __DIR__ . '/../..' . '/tests',
         ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
+        ),
+        'Symfony\\Component\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/filesystem',
+        ),
+        'Symfony\\Component\\Debug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
+        'Symfony\\Component\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Symfony\\Component\\Config\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/config',
         ),
         'Slim\\Views\\' => 
         array (
@@ -94,6 +121,10 @@ class ComposerStaticInit347069f5a239a86ec966ceef44d3aa8e
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Phinx\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/robmorgan/phinx/src/Phinx',
         ),
         'Monolog\\' => 
         array (

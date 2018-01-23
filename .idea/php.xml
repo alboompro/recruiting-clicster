@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/back-end/vendor/robmorgan/phinx" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/back-end/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/back-end/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/back-end/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/back-end/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/back-end/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/back-end/vendor/slim/php-view" />
+      <path value="$PROJECT_DIR$/back-end/vendor/slim/slim" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/back-end/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/back-end/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/back-end/vendor/composer" />
+      <path value="$PROJECT_DIR$/back-end/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/back-end/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/back-end/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/back-end/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/back-end/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/back-end/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/back-end/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/back-end/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/back-end/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/back-end/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/back-end/vendor/container-interop/container-interop" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="CUSTOM_LOADER" custom_loader_path="$PROJECT_DIR$/back-end/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+</project>
