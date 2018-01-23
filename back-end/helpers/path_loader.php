@@ -7,7 +7,7 @@
 if (!function_exists('path_modules')) {
     function path_modules($suffix = '')
     {
-        $paths = glob(__DIR__.'/../src/modules/*', GLOB_ONLYDIR);
+        $paths = glob(__DIR__.'/../src/Modules/*', GLOB_ONLYDIR);
 
         if (empty($suffix))
             return $paths;
