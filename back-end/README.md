@@ -1,42 +1,26 @@
-# Teste Back-end
+# Slim Framework 3 Skeleton Application
 
-Esse teste consiste em entendermos um pouco mais sobre seus conhecimentos em PHP
+Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
 
-## Instruções
+This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
 
-Crie uma aplicação RESTFull utilizando o framework Slim PHP; <br> A aplicação
-constitui em uma agenda telefônica online. Então você deverá:
+## Install the Application
 
-1. Criar uma aplicação `RESTFull utilizando o framework Slim PHP` seguindo as
-	boas práticas da comunidade;
-2. Olhe o arquivo
-	[docs/wireframe.png](https://github.com/alboompro/recruiting-clicster/blob/master/docs/wireframe.png)
-	neste arquivo contém um wireframe, olhe para ele e identifique a estrutura do
-	banco de dados que você irá criar;
+Run this command from the directory in which you want to install your new Slim Framework application.
 
-* Faça todos os recursos propostos no wireframe. Mas sinta-se à vontade para
-	sugerir novos, mas nunca remova as funcionalidades básicas.
+    php composer.phar create-project slim/slim-skeleton [my-app-name]
 
-### Esperamos que você
+Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
 
-* Utilize as ultimas versões de bibliotecas disponíveis;
-* Otimize a aplicação ao máximo;
-* Especifique o projeto no `README.md`;
-* Documente seus componentes e funçãos;
-* Faça commits pequenos e bem especificados;
+* Point your virtual host document root to your new application's `public/` directory.
+* Ensure `logs/` is web writeable.
 
-### Você pode
+To run the application in development, you can also run this command. 
 
-* Utilizar um task runner de sua preferência;
-* Deixar sua aplicação online usando heroku;
+	php composer.phar start
 
-### Ganhe pontos extras por:
+Run this command to run the test suite
 
-* Testes automatizados;
-* Integre o teste de back-end com o teste de front-end;
-* Desenvolver HTML semântico;
-* Ser fiel as especificações dos arquivos;
-* Utilizar `CI` para automatização;
-* Design Patterns;
+	php composer.phar test
 
-<br><br><sub>Os dados presentes neste teste são totalmente fictícios.</sub>
+That's it! Now go build something cool.
