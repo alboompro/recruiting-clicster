@@ -15,6 +15,10 @@ class Route extends AbstractRoute
 {
     public function create()
     {
-        $this->app->get('/login/{id}', UserController::class . ':getUsers');
+        //1 - Default route to get all users
+        $this->app->get('/', UserController::class . ':getAll');
+
+        //2 - Get all data from a single user
+        $this->app->get('/users[/{id}]', UserController::class . ':getUsersById');
     }
 }

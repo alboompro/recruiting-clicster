@@ -43,6 +43,14 @@
       <path value="$PROJECT_DIR$/back-end/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/back-end/vendor/psr/log" />
       <path value="$PROJECT_DIR$/back-end/vendor/container-interop/container-interop" />
+      <path value="$PROJECT_DIR$/back-end/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/back-end/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/back-end/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/back-end/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/back-end/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/back-end/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/back-end/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/back-end/vendor/illuminate/support" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
