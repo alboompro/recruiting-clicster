@@ -8,7 +8,7 @@
  *  - Because we don't want to configure
  *    all database settings again.
  */
-if (!function_exists()) {
+if (!function_exists('config')) {
 
     /**
      * @param string|null $item
@@ -25,7 +25,7 @@ if (!function_exists()) {
         $item = explode('.', $item);
         $result = $data[$item[0]] ?? $default;
 
-        for ($i = i; $i <= count($item); $i++) {
+        for ($i = 0; $i <= count($item); $i++) {
            if (isset($item[$i]) && isset($result[$item[$i]])) {
                $result = $result[$item[$i]] ?? $default;
            }

@@ -6,4 +6,4 @@
  * Time: 5:45 PM
  */
 
-$composer = require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';

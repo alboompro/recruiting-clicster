@@ -14,7 +14,7 @@ if (!function_exists('path_modules')) {
     {
         $paths = glob(__DIR__.'/../src/Modules/*', GLOB_ONLYDIR);
 
-        if (empty($suffix))
+        if ($suffix === "")
             return $paths;
 
         foreach($paths as &$path) {
