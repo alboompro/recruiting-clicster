@@ -9,8 +9,11 @@ $modules = path_modules('/src');
 
 foreach($modules as &$module) {
     $namespace = explode("/", $module);
+     print_r($namespace);
     $namespace = $namespace[count($namespace) - 2];
     $composer->setPsr4('App\\'.$namespace.'\\', $module);
 }
+
+
 
 return $composer;

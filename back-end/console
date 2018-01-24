@@ -11,6 +11,10 @@ use \Symfony\Component\Console\Application;
 
 $application = new Application();
 
-$application->add(new \App\Core\Commands\ServerCommand());
+$application->add(new \App\Core\Commands\ServerCommand()); //Our app server init
+$application->add(new \App\Migrations\Commands\InitCommand()); //init migration
+$application->add(new \App\Migrations\Commands\MigrationCommand()); //run migration
+$application->add(new \App\Migrations\Commands\SeedCommand()); //run seed
+$application->add(new \App\Migrations\Commands\SeedCreateCommand()); //create an seed
 
 $application->run();

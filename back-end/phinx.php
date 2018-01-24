@@ -3,7 +3,7 @@ require __DIR__.'/helpers/helpers.php';
 return [
     'paths' => [
         'migrations' => __DIR__ . '/db/migrations',
-        'seeds' => __DIR__ . '/db/seeds'
+        'seeds'      => __DIR__ . '/db/seeds'
     ],
     'environments' => [
         'default_migration_table' => 'phinxlog',
@@ -19,7 +19,7 @@ return [
         ],
         'development' => [
             'adapter' => 'mysql',
-            'host' => 'localhost',
+            'host' => '127.0.0.1',
             'name' => 'clicster_database',
             'user' => 'root',
             'pass' => '',
@@ -36,5 +36,6 @@ return [
             'charset' => 'utf8',
         ],
     ],
+
     'version_order' => 'creation'
 ];

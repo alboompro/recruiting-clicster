@@ -5,6 +5,11 @@
  */
 
 if (!function_exists('path_modules')) {
+
+    /**
+     * @param string $suffix
+     * @return array
+     */
     function path_modules($suffix = '')
     {
         $paths = glob(__DIR__.'/../src/Modules/*', GLOB_ONLYDIR);
