@@ -26,23 +26,16 @@ class User extends Model
 
         if (!empty($user_id)) {
             $user_data['user']['data'] = DB::table('users')
-                       ->join('companies', 'companies.company_id', '=', 'users.company_id')
                        ->where('users.user_id', $user_id)
                        ->get()[0];
 
-            $phones = DB::table('phones')
+            $contacts = DB::table('contacts')
                           ->where('user_id', $user_id)
                           ->get();
 
-            $emails = DB::table('emails')
-                         ->where('user_id', $user_id)
-                         ->get();
-
             if( !empty($phones) )
-                $user_data['user']['phones'] = $phones;
+                $user_data['user']['$contacts'] = $contacts;
 
-            if( !empty($phones) )
-                $user_data['user']['emails'] = $emails;
 
             return $user_data;
         }

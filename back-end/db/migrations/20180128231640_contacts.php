@@ -3,13 +3,13 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class Emails extends AbstractMigration
+class Contacts extends AbstractMigration
 {
     /**
      * Change Method.
      *
      * Write your reversible migrations using this method.
-     *
+     *integer
      * More information on writing migrations is available here:
      * http://docs.phinx.org/en/latest/migrations.html#the-abstractmigration-class
      *
@@ -28,15 +28,15 @@ class Emails extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('emails', ['id' => false, 'primary_key' => ['email_id']]);
-        $table->addColumn('email_id', 'integer', ['identity' => true, 'signed' => false])
-              ->addColumn('user_id', 'integer', ['signed' => false])
-              ->addColumn('email', 'string', ['length' => 255])
-              ->addColumn('updated_at', 'datetime')
-              ->addColumn('created_at', 'datetime')
-              ->addForeignKey('user_id', 'users', 'user_id',
-                                               ['delete'=> 'NO_ACTION', 'update'=> 'NO_ACTION'])
-              ->create();
-
+        $table = $this->table('contacts', ['id' => false, 'primary_key' => ['contact_id']]);
+        $table->addColumn('contact_id', 'integer', ['identity' => true, 'signed' => false])
+            ->addColumn('user_id', 'integer', ['signed' => false])
+            ->addColumn('type', 'string')
+            ->addColumn('contact', 'string')
+            ->addColumn('updated_at', 'datetime')
+            ->addColumn('created_at', 'datetime')
+            ->addForeignKey('user_id', 'users', 'user_id',
+                ['delete'=> 'NO_ACTION', 'update'=> 'NO_ACTION'])
+            ->create();
     }
 }

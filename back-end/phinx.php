@@ -20,7 +20,7 @@ return [
         'development' => [
             'adapter' => 'mysql',
             'host' => '127.0.0.1',
-            'name' => 'clicster_database',
+            'name' => 'clicster',
             'user' => 'root',
             'pass' => '',
             'port' => '3306',
