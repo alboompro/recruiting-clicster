@@ -1,11 +1,10 @@
 {
   "name": "clicster",
   "version": "1.0.0",
-  "description": "A simple test for clicster recruitment ",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Pedro Henrique Guimarães",
-  "license": "ISC"
+  "lockfileVersion": 1,
+  "requires": true,
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-route": "^1.4.4"
+  }
 }
