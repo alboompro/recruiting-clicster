@@ -27,6 +27,7 @@ class User extends Model
         if (!empty($user_id)) {
             $user_data['user']['data'] = DB::table('users')
                        ->join('companies', 'companies.company_id', '=', 'users.company_id')
+                       ->where('users.user_id', $user_id)
                        ->get()[0];
 
             $phones = DB::table('phones')

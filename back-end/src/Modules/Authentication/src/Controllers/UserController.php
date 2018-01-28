@@ -22,24 +22,27 @@ class UserController extends AbstractController
      * @param Request $request
      * @param Response $response
      * @param $args
+     * @return mixed
      */
     public function getAll(Request $request, Response $response, $args)
     {
-        $json = json_encode(User::all());
+        $data = User::all();
         return $response->withHeader('Content-type', 'application/json')
+                        ->withHeader('Access-Control-Allow-Origin', '*')
+                        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
                         ->withStatus(200)
-                        ->withJson($json);
+                        ->withJson($data);
 
     }
 
 
     /**
-     * Get a single user informations
+     * Get a single user information
      *
      * @param Request $request
      * @param Response $response
      * @param $args
-     * @return json
+     * @return mixed
      */
     public function getUsersById(Request $request, Response $response, $args)
     {
@@ -49,8 +52,10 @@ class UserController extends AbstractController
                 "message" => "Invalid request",
                 "detail" => "'Args are needed: http://url/args"
             ];
-            ;
+
             return $response->withHeader('Content-type', 'application/json')
+                            ->withHeader('Access-Control-Allow-Origin', '*')
+                            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
                             ->withStatus(400)
                             ->withJson($data);
         }
@@ -59,10 +64,31 @@ class UserController extends AbstractController
 
         if (!empty($data) && !is_null($data)) {
 
-            $json = json_encode($data);
             return $response->withHeader('Content-type', 'application/json')
+                            ->withHeader('Access-Control-Allow-Origin', '*')
                             ->withStatus(200)
                             ->withJson($data);
         }
+    }
+
+
+    /**
+     * Receive post data from api.
+     *
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return mixed
+     */
+    public function createUser(Request $request, Response $response, $args)
+    {
+        $data  = $request->getParsedBody();
+
+        return $response->withHeader('Content-type', 'application/json')
+                        ->withHeader('Access-Control-Allow-Origin', '*')
+                        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
+                        ->withStatus(200)
+                        ->withJson($data);
+
     }
 }
