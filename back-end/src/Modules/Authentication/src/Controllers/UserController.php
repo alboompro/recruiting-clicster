@@ -84,11 +84,38 @@ class UserController extends AbstractController
     {
         $data  = $request->getParsedBody();
 
-        return $response->withHeader('Content-type', 'application/json')
-                        ->withHeader('Access-Control-Allow-Origin', '*')
-                        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
-                        ->withStatus(200)
-                        ->withJson($data);
 
+        if(!is_null($data['firstName']) && !empty($data['firstName'])) {
+
+            $user = new User();
+
+            if($user_id = $user->createUser($data)) {
+                $res = [
+                    'code' => 401,
+                    'message' => 'User created successfully',
+                    'lastId'  => $user_id
+                ];
+
+                return $response->withHeader('Content-type', 'application/json')
+                    ->withHeader('Access-Control-Allow-Origin', '*')
+                    ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
+                    ->withStatus(200)
+                    ->withJson($res);
+            }
+        }
+
+    }
+
+    public function deleteUser(Request $request, Response $response, $args)
+    {
+        $user_id = $args['id'];
+        $user = new User();
+        $user->remove($user_id);
+
+        return $response->withHeader('Content-type', 'application/json')
+            ->withHeader('Access-Control-Allow-Origin', '*')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
+            ->withStatus(200)
+            ->withJson($user_id);
     }
 }

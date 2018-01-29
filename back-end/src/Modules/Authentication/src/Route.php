@@ -38,5 +38,8 @@ class Route extends AbstractRoute
 
         /** POST ROUTES */
         $this->app->post('/api/create/user', UserController::class . ':createUser');
+
+        /** DELETE ROUTES */
+        $this->app->delete('/api/delete[/{id}]', UserController::class . ':deleteUser');
     }
 }

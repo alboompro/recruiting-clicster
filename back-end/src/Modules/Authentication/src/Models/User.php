@@ -33,11 +33,47 @@ class User extends Model
                           ->where('user_id', $user_id)
                           ->get();
 
-            if( !empty($phones) )
-                $user_data['user']['$contacts'] = $contacts;
+            if( !empty($contacts) )
+                $user_data['user']['contacts'] = $contacts;
 
 
             return $user_data;
         }
     }
+
+    /**
+     * Insert a new User and then insert him contacts if exists
+     *
+     * @param $data
+     * @return mixed
+     *
+     */
+    public function createUser($data)
+    {
+        if (!is_null($data)) {
+            $this->company_name = $data['companyName'];
+            $this->first_name   = $data['firstName'];
+            $this->last_name    = $data['lastName'];
+            $this->address      = $data['address'];
+            $this->save();
+
+            $contact = new Contact();
+            $contact->createContacts($data['contacts'], $this->user_id);
+
+            return $this->user_id;
+        }
+    }
+
+    /**
+     * @param $user_id
+     */
+    public function remove($user_id)
+    {
+        $contact = new Contact();
+
+        if($contact->remove($user_id))
+            User::where('user_id' , '=', $user_id)->delete();
+
+    }
+
 }
