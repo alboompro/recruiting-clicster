@@ -1,27 +1,20 @@
-# Full-stack Clicster Teste
+# Como rodar o projeto? #
 
-O teste é dividido em 3 partes onde é opcional a entrega da etapa 1 (infra).
+## front-end ##
+A parte do front-end necessita de um servidor simples, apenas para que o ngRoute funcione, 
+pode-se usar o bult-in do php, apenas rodando o comando php -S localhost:7000 dentro da pasta 
+front-end e tudo irá funcionar perfeitamente, a única configuração no arquivo front-end que pode ser necessária é a constante que define o end-point da API. Precisará ser altearada, apenas se a porta e host
+do projeto back-end for alterado. Atualmente o servidor back-end funciona, após iniciado, em `http://localhost:8080`.
 
-## Testes
 
-1. Infra
-2. Front-end
-3. Back-end
+## back-end ##
+A parte do back-end também é bem simples, porém é necessária algumas configurações antes de colocar o servidor
+para rodar o projeto. 
 
-<sub>qualquer dúvida entre em contato através do e-mail
-`vagas@alboom.com.br`</sub>
+* Iniciar um servidor de banco de dados mysql.
+* Ir até um arquivo chamado `back-end/phinx.php` e colocar as configurações do banco de dados. Por padrão 
+o nome do banco será "clicster", mas pode ser modificado desde que o nome seja alterado tanto no arquivo quanto no próprio servidor de banco de dados. 
+* Após configurar, estando no arquivo `back-end` basta rodar o comando `php console migrate:run`, pois fora utilizado a biblioteca do Symfony para trabalhar com linha de comando. Esse comando irá criar as tabelas necessárias no banco de dados. Tabelas necessárias para o funcionamento do projeto. 
+* Feita as configurações básicas, o comando `php console serve` pode ser utilizado, ele irá iniciar um servidor na porta 8080 que pode ser acessada através de `http://localhost:8080`.
 
-## Instruções
 
-1. Crie uma conta no [github.com](https://www.github.com/);
-2. Faça um fork e clone do projeto;
-3. Crie uma branch (pode ser com seu nome mesmo);
-4. Siga a risca todos os requerimentos do item "Esperamos que você"
-5. Submeta o Pull Request e envie um email para `vagas@alboom.com.br` :D<br>
-
-**PS:** Usamos o mesmo teste para todos os níveis: **junior**, **pleno** ou
-**senior**, mas procuramos adequar nossa exigência na avaliação com cada um
-desses níveis sem, por exemplo, exigir excelência de quem está começando.
-
-<br><br><sub>Você pode nos surpreender, mas não se esqueça que o que pedimos
-deve ser prioridade.</sub>

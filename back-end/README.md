@@ -1,42 +1,11 @@
-# Teste Back-end
+# O que foi usado no back-end? #
 
-Esse teste consiste em entendermos um pouco mais sobre seus conhecimentos em PHP
+Algumas tecnologias simples foram implementadas, pois o slim é um framework feito para ser leve, ao mesmo tempo que totalmente customizável, isso que o faz ser tão podereoso. 
 
-## Instruções
+Alem do que já vem instalado junto com o skeleton do slim, também fora implementado:
 
-Crie uma aplicação RESTFull utilizando o framework Slim PHP; <br> A aplicação
-constitui em uma agenda telefônica online. Então você deverá:
+* Phinx: Uma biblioteca que facilita bastante o processo de migração em banco de dados, permitindo que se crie sementes, migrations e diversas outras coisas, além de ajudar a separar os ambientes e com isso facilitar o deploy. 
 
-1. Criar uma aplicação `RESTFull utilizando o framework Slim PHP` seguindo as
-	boas práticas da comunidade;
-2. Olhe o arquivo
-	[docs/wireframe.png](https://github.com/alboompro/recruiting-clicster/blob/master/docs/wireframe.png)
-	neste arquivo contém um wireframe, olhe para ele e identifique a estrutura do
-	banco de dados que você irá criar;
+* Eloquent: Além de ser um dos melhores ORM, também provê toda uma interface simples para trabalhar com CRUD de uma forma bem mais rápida e com menos linhas de código.
 
-* Faça todos os recursos propostos no wireframe. Mas sinta-se à vontade para
-	sugerir novos, mas nunca remova as funcionalidades básicas.
-
-### Esperamos que você
-
-* Utilize as ultimas versões de bibliotecas disponíveis;
-* Otimize a aplicação ao máximo;
-* Especifique o projeto no `README.md`;
-* Documente seus componentes e funçãos;
-* Faça commits pequenos e bem especificados;
-
-### Você pode
-
-* Utilizar um task runner de sua preferência;
-* Deixar sua aplicação online usando heroku;
-
-### Ganhe pontos extras por:
-
-* Testes automatizados;
-* Integre o teste de back-end com o teste de front-end;
-* Desenvolver HTML semântico;
-* Ser fiel as especificações dos arquivos;
-* Utilizar `CI` para automatização;
-* Design Patterns;
-
-<br><br><sub>Os dados presentes neste teste são totalmente fictícios.</sub>
+* Symfony console: É a biblioteca do framework Symfony e utilizada pelo artisan, porém é totalmente customizável e provê métodos simples para que você possa criar seus próprios command lines. 

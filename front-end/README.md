@@ -1,47 +1,11 @@
-# Teste Front-end
+## O que foi usado no front? ## 
 
-Esse teste consiste em entendermos um pouco mais sobre seus conhecimentos em
-Angular.JS 1.5
+Além do que forá pedido, no caso o angular, também fora usado:
 
-## Instruções
+* ngRoute: Lib do angular para facilitar o processo de roteamento do front-end, é simples, tem poucas funcionalidades, mas da para fazer bastante coisas. 
 
-Crie uma aplicação Angular.JS 1.5 para o front-end; <br> A aplicação constitui
-em uma agenda telefônica online. Então você deverá:
+* SASS: Pré-processador css, para facilitar a criação de folhas de estilo. Permite criar funções(mixins), variáveis e ainda possibilita ganho de performance, pois da para gerar arquivos minificados. 
 
-1. Crie uma aplicação `Angular.JS 1.5` seguindo as boas práticas da comunidade;
-2. Siga o modelo do wireframe em
-	[docs/wireframe.png](https://github.com/alboompro/recruiting-clicster/blob/master/docs/wireframe.png);
-3. Recupere os dados utilizando requisições ajax. Crie um arquivo json;
+## considerações ## 
 
-* Faça todos os recursos propostos no wireframe. Mas sinta-se à vontade para
-	sugerir novos, mas nunca remova as funcionalidades básicas.
-
-### Esperamos que você
-
-* Utilize as ultimas versões de bibliotecas disponíveis;
-* Otimize a aplicação ao máximo;
-* Especifique o projeto no `README.md`;
-* Documente seus componentes e funçãos;
-* Faça commits pequenos e bem especificados;
-
-### Você pode
-
-* Utilizar um pré-processador de CSS (Scss, Stylus);
-* Utilizar um task runner de sua preferência;
-* Utilizar bibliotecas CSS como compass, bourbon, animateCSS ou outras;
-* Deixar sua aplicação online usando heroku;
-* Animar as trasições de telas;
-
-### Ganhe pontos extras por:
-
-* Testes automatizados;
-* Integre o teste de back-end com o teste de front-end;
-* Desenvolver HTML semântico;
-* Componentizar seu CSS;
-* Ser fiel as especificações dos arquivos;
-* HTML com acessibilidade;
-* Utilizar `CI` para automatização;
-* Animações fluídas e bem feitas;
-* UX/UI;
-
-<br><br><sub>Os dados presentes neste teste são totalmente fictícios.</sub>
+O sass não foi utilizado com nenhum task runner, foi puramente utilizado com o gem do ruby e rodado em cima de seu próprio console. 

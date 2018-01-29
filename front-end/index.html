@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="clicster">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/css/assets/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/general.css">
+    <title>Clicster Schedule</title>
+</head>
+<body>
+<!-- ASIDE MENU -->
+<div class="toggle-button" id="toggle" onclick="toggle()">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<aside id="aside" ng-controller="getUsers">
+    <div class="search">
+        <input type="text">
+        <a href="#/create" class="btn btn-lg"> + </a>
+    </div>
+    <ul>
+        <li ng-repeat="user in users">
+            <a href="#/user/{{ user.user_id }}/index/{{ $index }}">
+                <img src="public/images/user-white.png" width="60">
+                <h5>{{ user.first_name + " " + user.last_name }}</h5>
+                <h6>{{ user.company_name }}</h6>
+                
+                <div style="clear:both;"></div>
+            </a>
+        </li>
+    </ul>
+</aside>
+<!-- ./ ASIDE MENU -->
+
+<div ng-view></div>
+
+<!-- DINAMIC CONTENT -->
+
+<!-- ./ DINAMIC CONTENT -->
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-route/angular-route.min.js"></script>
+<script src="app/index.js"></script>
+<script src="app/factories/userFactory.js"></script>
+<script src="public/js/menu/menu.js"></script>
+</body>
+</html>
