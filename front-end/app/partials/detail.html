@@ -6,11 +6,9 @@
             </div>
             <div class="col-md-6 text-left" style="margin-top: 30px;">
                 <h2>{{ user.data.first_name + " " + last_name}}</h2>
-                <h5>{{ user.data.name }}</h5>
+                <h5>{{ user.data.company_name }}</h5>
                 <h6>
-                    {{ user.data.street + ", " + user.data.number + ", " + user.data.neighborhood + ", " +
-                       user.data.city + " - " + user.data.state
-                    }}
+                    {{ user.data.address }}
                 </h6>
             </div>
             <div class="col-md-2 text-center">
@@ -41,6 +39,7 @@
                     height="500px"
                     frameborder="0" style="border:0"
                     src="{{ googleMaps(user.data) }}" allowfullscreen>
+
             </iframe>
         </div>
     </div>

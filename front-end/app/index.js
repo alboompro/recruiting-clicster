@@ -11,15 +11,15 @@ app.controller('getUsers', function($scope, $http) {
 });
 
 app.controller('getUser', function($scope, $sce, $http, $routeParams) {
-    $scope.user = "";
+        $scope.user = "";
         $scope.googleMaps = function(data) {
-            return $sce.trustAsResourceUrl("https://www.google.com/maps/embed/v1/place?key=AIzaSyD1BkO4y3-1D_ruz3nEr7qISCA8P9HTbm0&q=" + data.street + ", " + data.city);
+            if(data)
+                return $sce.trustAsResourceUrl("https://www.google.com/maps/embed/v1/place?key=AIzaSyD1BkO4y3-1D_ruz3nEr7qISCA8P9HTbm0&q=" + data.address);
         }
 
     $http.get(apiUri + 'user/' + $routeParams.id)
         .success(function(data) {
             $scope.user = data.user;
-
         });
 });
 
