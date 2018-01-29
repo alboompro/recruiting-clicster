@@ -76,4 +76,21 @@ class User extends Model
 
     }
 
+    /**
+     * @param array $user_id
+     * @param array $new_data
+     * @return bool|void
+     */
+    public function update($user_id, $new_data)
+    {
+        print_r($new_data);
+        User::where('user_id', $user_id)
+            ->update([
+                'company_name' => $new_data['company_name'],
+                'first_name'   => $new_data['first_name'],
+                'last_name'    => $new_data['last_name'],
+                'address'      => $new_data['address']
+            ]);
+    }
+
 }

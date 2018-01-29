@@ -8,6 +8,7 @@
 
 namespace App\Authentication\Controllers;
 
+use App\Authentication\Models\Contact;
 use App\Authentication\Models\User;
 use App\Core\Controllers\AbstractController;
 use Slim\Http\Request;
@@ -117,5 +118,18 @@ class UserController extends AbstractController
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
             ->withStatus(200)
             ->withJson($user_id);
+    }
+
+    public function updateUser(Request $request, Response $response, $args)
+    {
+        $user_id = $args['id'];
+        $data = $request->getParsedBody();
+
+        $user = new User();
+        $contact = new Contact();
+
+        $contact->update($user_id, $data['contacts']);
+
+        $user->update($user_id, $data['data']);
     }
 }
