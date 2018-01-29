@@ -1,12 +1,15 @@
+//Api URL
 const apiUri = 'http://localhost:8080/api/';
 
+//Angular object
 var app = angular.module('clicster', ['ngRoute']);
 
-app.controller('getUsers', function($scope, $http) {
+app.controller('getUsers', function($scope, $http, userFactory) {
     $scope.users = [];
     $http.get(apiUri + 'users')
         .success(function(data) {
-            $scope.users = data;
+            userFactory.users = data;
+            $scope.users = userFactory.users;
         });
 });
 
@@ -23,10 +26,11 @@ app.controller('getUser', function($scope, $sce, $http, $routeParams) {
         });
 });
 
-app.controller('createUser', function($scope, $http) {
+app.controller('createUser', function($scope, $http, userFactory) {
 
     $scope.contact  = {
-        name: '',
+        firstName: '',
+        lastName: '',
         companyName: '',
         address: '',
         contacts: [
@@ -43,10 +47,42 @@ app.controller('createUser', function($scope, $http) {
         });
     };
 
+    $scope.cancel = function() {
+        $scope.contact  = {
+            firstName: '',
+            lastName: '',
+            companyName: '',
+            address: '',
+            contacts: [
+                {
+                    type: '', contact: ''
+                }
+            ]
+        }
+    }
+
     $scope.create = function() {
         $http.post(apiUri + "create/user", $scope.contact)
             .success(function(data) {
-                console.log(data);
+                $scope.messageOk = 'Usuário cadastrado com sucesso!';
+
+                
+                $http.get(apiUri + "users").success(function(data) {
+                    userFactory.users = data.users;
+                });
+                
+                //Reset everything if it's ok
+                $scope.contact  = {
+                    firstName: '',
+                    lastName: '',
+                    companyName: '',
+                    address: '',
+                    contacts: [
+                        {
+                            type: '', contact: ''
+                        }
+                    ]
+                }
             });
     }
 });

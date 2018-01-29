@@ -1,4 +1,5 @@
 <section id="header">
+   
         <div class="container">
             <div class="row">
                     <div class="col-md-4 text-center">
@@ -6,7 +7,8 @@
                     </div>
                     <div class="col-md-6 text-center">
                         <form>
-                            <input type="text" placeholder="Nome do cliente" ng-model="contact.name">
+                            <input type="text" placeholder="Nome do cliente" ng-model="contact.firstName">
+                            <input type="text" placeholder="Sobrenome do cliente" ng-model="contact.lastName">
                             <input type="text" placeholder="Empresa do cliente" ng-model="contact.companyName">
                             <input type="text" placeholder="Endereço do cliente" ng-model="contact.address">
                         </form>
@@ -14,7 +16,7 @@
                     <div class="col-md-2 text-center">
                         <div class="actions">
                             <div class="btn btn-primary btn-lg rounded" title="Adicionar" ng-click="create()">+</div>
-                            <div class="btn btn-danger btn-lg rounded" title="Cancelar">x</div>
+                            <div class="btn btn-danger btn-lg rounded" title="Cancelar" ng-click="cancel()">x</div>
                         </div>
                     </div>
             </div>
@@ -22,7 +24,7 @@
     </section>
     <section id="contact-type">
        <div class="container">
-
+            <div ng-if="messageOk" class="alert alert-success">{{ messageOk }}</div>
             <div class="row" ng-repeat="cont in contact.contacts">
                     <div class="form-group col-md-4">
                         <select name="" id="" class="form-control" ng-model="cont.type">
