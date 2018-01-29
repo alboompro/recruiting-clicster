@@ -14,7 +14,7 @@ app.controller('getUser', function($scope, $sce, $http, $routeParams) {
         $scope.user = "";
         $scope.googleMaps = function(data) {
             if(data)
-                return $sce.trustAsResourceUrl("https://www.google.com/maps/embed/v1/place?key=AIzaSyD1BkO4y3-1D_ruz3nEr7qISCA8P9HTbm0&q=" + data.address);
+            return $sce.trustAsResourceUrl("https://www.google.com/maps/embed/v1/place?key=AIzaSyD1BkO4y3-1D_ruz3nEr7qISCA8P9HTbm0&q=" + data.address);
         }
 
     $http.get(apiUri + 'user/' + $routeParams.id)
@@ -24,10 +24,31 @@ app.controller('getUser', function($scope, $sce, $http, $routeParams) {
 });
 
 app.controller('createUser', function($scope, $http) {
-    $http.post(apiUri + "create/user")
-        .success(function() {
-            console.log("Ok");
+
+    $scope.contact  = {
+        name: '',
+        companyName: '',
+        address: '',
+        contacts: [
+            {
+                type: '', contact: ''
+            }
+        ]
+    }
+
+    $scope.add = function() {
+        $scope.contact.contacts.push({
+            type: '',
+            contact: ''
         });
+    };
+
+    $scope.create = function() {
+        $http.post(apiUri + "create/user", $scope.contact)
+            .success(function(data) {
+                console.log(data);
+            });
+    }
 });
 
 app.config(['$routeProvider', function($routeProvider) {

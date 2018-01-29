@@ -6,14 +6,14 @@
                     </div>
                     <div class="col-md-6 text-center">
                         <form>
-                            <input type="text" placeholder="Nome do cliente">
-                            <input type="text" placeholder="Empresa do cliente">
-                            <input type="text" placeholder="Endereço do cliente">
+                            <input type="text" placeholder="Nome do cliente" ng-model="contact.name">
+                            <input type="text" placeholder="Empresa do cliente" ng-model="contact.companyName">
+                            <input type="text" placeholder="Endereço do cliente" ng-model="contact.address">
                         </form>
                     </div>
                     <div class="col-md-2 text-center">
                         <div class="actions">
-                            <div class="btn btn-primary btn-lg rounded" title="Adicionar" >+</div>
+                            <div class="btn btn-primary btn-lg rounded" title="Adicionar" ng-click="create()">+</div>
                             <div class="btn btn-danger btn-lg rounded" title="Cancelar">x</div>
                         </div>
                     </div>
@@ -22,9 +22,10 @@
     </section>
     <section id="contact-type">
        <div class="container">
-            <div class="row">
+
+            <div class="row" ng-repeat="cont in contact.contacts">
                     <div class="form-group col-md-4">
-                        <select name="" id="" class="form-control">
+                        <select name="" id="" class="form-control" ng-model="cont.type">
                             <option value="">Tipo de contato </option>
                             <option value="E-mail">E-mail</option>
                             <option value="Telefone">Telefone</option>
@@ -35,12 +36,12 @@
                     </div>
     
                     <div class="form-group col-md-8">
-                        <input name=""class=" input">
+                        <input name=""class=" input" ng-model="cont.contact">
                     </div>
-                </div>
+            </div>
        </div>
     </section>
 
     <div class="add-button"> 
-        <div class="button btn btn-lg"> + </div>    
+        <div class="button btn btn-lg" ng-click="add()"> + </div>
     </div>

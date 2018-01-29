@@ -21,14 +21,14 @@
     </div>
 </section>
 
-<section id="contact-type">
+<section id="contact-type" class="container">
     <div class="row">
         <div class="col-md-6">
             <table class="table">
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
+                <tr ng-repeat="contact in user.contacts">
+                    <th scope="row">{{ contact.type }}</th>
+                    <td>{{ contact.contact }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -39,7 +39,6 @@
                     height="500px"
                     frameborder="0" style="border:0"
                     src="{{ googleMaps(user.data) }}" allowfullscreen>
-
             </iframe>
         </div>
     </div>
