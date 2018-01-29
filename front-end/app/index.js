@@ -27,11 +27,13 @@ app.controller('getUser', function($scope, $sce, $http, $routeParams, userFactor
 
         });
         $scope.remove = function(id, index) {
-            $http.delete(apiUri + "delete/" + id).success(function(data) {
-                userFactory.users.splice(index, 1);
-                alert("Deseja mesmo excluir esse usuário?");
-                window.location.href = "#/";
-            });
+            if(confirm("Deseja mesmo excluir esse usuário?")) {
+                $http.delete(apiUri + "delete/" + id).success(function(data) {
+                    
+                        userFactory.users.splice(index, 1);
+                        window.location.href = "#/";
+                });
+            }
         }
 });
 
@@ -102,6 +104,32 @@ app.controller('createUser', function($scope, $http, userFactory) {
     }
 });
 
+app.controller('updateUser', function($scope, $sce, $http, $routeParams, userFactory){
+    $scope.user = [];    
+
+    $scope.add = function() {
+        $scope.user.contacts.push({
+            type: '',
+            contact: ''
+        });
+    };
+
+    $scope.update = function() {
+        if(confirm("Deseja mesmo editar esse usuário?")){
+            $http.post(apiUri + "update/user/" + $routeParams.id, $scope.user).success(function(data) {
+                
+                    window.location.href = "#/";
+            });
+        }
+    };
+
+    $http.get(apiUri + 'user/' + $routeParams.id)
+    .success(function(data) {
+        $scope.user = data.user;
+       
+    });
+});
+
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -116,4 +144,8 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: "app/partials/detail.html",
             controller: 'getUser'
         })
+        .when('/edit/:id', {
+            templateUrl: "app/partials/update.html",
+            controller: 'updateUser'
+        });
 }]);
