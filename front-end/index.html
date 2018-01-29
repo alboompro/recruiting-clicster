@@ -22,10 +22,11 @@
     </div>
     <ul>
         <li ng-repeat="user in users">
-            <a href="#/user/{{ user.user_id }}">
+            <a href="#/user/{{ user.user_id }}/index/{{ $index }}">
                 <img src="public/images/user-white.png" width="60">
                 <h5>{{ user.first_name + " " + user.last_name }}</h5>
                 <h6>{{ user.company_name }}</h6>
+                
                 <div style="clear:both;"></div>
             </a>
         </li>
