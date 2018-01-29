@@ -1,8 +1,8 @@
 /*
 Error: Undefined variable: "$medium_blue".
-        on line 6 of scss/aside.scss
+        on line 6 of sass/aside.scss
 
-1: $aside_width: 300px;
+1: $aside_width: 400px;
 2: aside#aside {
 3:     position: fixed;
 4:     width: $aside_width;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$medium_blue".
 11: }
 
 Backtrace:
-scss/aside.scss:6
+sass/aside.scss:6
 /var/lib/gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 /var/lib/gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -69,4 +69,4 @@ scss/aside.scss:6
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$medium_blue\".\A         on line 6 of scss/aside.scss\A \A 1: $aside_width: 300px;\A 2: aside#aside {\A 3:     position: fixed;\A 4:     width: $aside_width;\A 5:     height: 100%;\A 6:     background-color: $medium_blue;\A 7:     left: -$aside_width;\A 8:     transition: all 500ms linear;\A 9:     overflow-y: scroll;\A 10:     z-index: 9999;\A 11: }"; }
+  content: "Error: Undefined variable: \"$medium_blue\".\A         on line 6 of sass/aside.scss\A \A 1: $aside_width: 400px;\A 2: aside#aside {\A 3:     position: fixed;\A 4:     width: $aside_width;\A 5:     height: 100%;\A 6:     background-color: $medium_blue;\A 7:     left: -$aside_width;\A 8:     transition: all 500ms linear;\A 9:     overflow-y: scroll;\A 10:     z-index: 9999;\A 11: }"; }
