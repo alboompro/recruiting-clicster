@@ -1,26 +1,11 @@
-# Slim Framework 3 Skeleton Application
+# O que foi usado no back-end? #
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+Algumas tecnologias simples foram implementadas, pois o slim é um framework feito para ser leve, ao mesmo tempo que totalmente customizável, isso que o faz ser tão podereoso. 
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+Alem do que já vem instalado junto com o skeleton do slim, também fora implementado:
 
-## Install the Application
+* Phinx: Uma biblioteca que facilita bastante o processo de migração em banco de dados, permitindo que se crie sementes, migrations e diversas outras coisas, além de ajudar a separar os ambientes e com isso facilitar o deploy. 
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+* Eloquent: Além de ser um dos melhores ORM, também provê toda uma interface simples para trabalhar com CRUD de uma forma bem mais rápida e com menos linhas de código.
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
-
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
-
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
-To run the application in development, you can also run this command. 
-
-	php composer.phar start
-
-Run this command to run the test suite
-
-	php composer.phar test
-
-That's it! Now go build something cool.
+* Symfony console: É a biblioteca do framework Symfony e utilizada pelo artisan, porém é totalmente customizável e provê métodos simples para que você possa criar seus próprios command lines. 
